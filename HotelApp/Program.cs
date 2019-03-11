@@ -10,21 +10,30 @@ namespace HotelApp
     {
         static void Main(string[] args)
         {
-            string choice = Console.ReadLine();
+            string menuString =
+                "---------- HotelRESTService ----------\n" +
+                "1. CREATE\n" +
+                "2. READ\n" +
+                "3. UPDATE\n" +
+                "4. DELETE\n" +
+                "Vælg et nummer: ";
 
+            Console.WriteLine(menuString);
+            int choice = int.Parse(Console.ReadLine());
+            Console.Clear();
             switch (choice)
             {
-                //TODO gad ikke finde ud af hvorfor det ikke virkede, så deeeet
-                case "c":
-                    //client.Create();
+                case 1:
+
+
                     break;
-                case "r":
+                case 2:
                     //client.Read();
                     break;
-                case "u":
+                case 3:
                     //client.Update();
                     break;
-                case "d":
+                case 4:
                     //client.Delete();
                     break;
                 default:
