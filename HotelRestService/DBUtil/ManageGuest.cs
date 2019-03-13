@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using DemoHotelDB.DBUtil;
-using HotelModels;
+using CorrectLibrary;
 
 namespace HotelRestService.DBUtil
 {
     /// <summary>
     /// CRUD/REST funktionalitet til lokaldb
     /// </summary>
-    public class ManageGuest : IManageGuest
+    public class ManageGuest
     {
         /// <summary>
         /// Strengen der giver placering og forbindelsen til databasen.

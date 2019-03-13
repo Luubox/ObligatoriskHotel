@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
-using HotelModels;
+using CorrectLibrary;
 
 namespace HotelRestService.DBUtil
 {
     public class ManageFacilities
     {
+        //TODO Indsæt connection string fra opgaven her
         public string connectionString = "";
 
         public List<Facilities> GetAllFacilities()
@@ -78,7 +79,7 @@ namespace HotelRestService.DBUtil
 
         public bool CreateFacilities(Facilities facilities)
         {
-            string querystring = $"INSERT INTO DemoFacilities VALUES{facilities.HotelNr}, {facilities.Swimmingpool}, {facilities.Tabletennis}, {facilities.Pooltable}, {facilities.Bar}";
+            string querystring = $"INSERT INTO DemoFacilities VALUES {facilities.HotelNr}, {facilities.Swimmingpool}, {facilities.Tabletennis}, {facilities.Pooltable}, {facilities.Bar}";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

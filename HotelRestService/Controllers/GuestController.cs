@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using HotelModels;
+using CorrectLibrary;
 using HotelRestService.DBUtil;
 
 namespace HotelRestService.Controllers

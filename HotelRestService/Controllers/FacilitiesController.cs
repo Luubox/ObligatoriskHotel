@@ -4,13 +4,18 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using HotelModels;
+using CorrectLibrary;
 using HotelRestService.DBUtil;
 
 namespace HotelRestService.Controllers
 {
     public class FacilitiesController : ApiController
     {
+        public FacilitiesController()
+        {
+            
+        }
+
         ManageFacilities manageFacilities = new ManageFacilities();
         // GET: api/Facilities
         public List<Facilities> Get()
@@ -27,7 +32,7 @@ namespace HotelRestService.Controllers
         // POST: api/Facilities
         public void Post([FromBody]Facilities value)
         {
-            manageFacilities.CreateFacilities(value)
+            manageFacilities.CreateFacilities(value);
         }
 
         // PUT: api/Facilities/5
