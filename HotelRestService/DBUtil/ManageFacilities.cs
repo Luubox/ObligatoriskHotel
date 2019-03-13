@@ -10,7 +10,7 @@ namespace HotelRestService.DBUtil
     public class ManageFacilities
     {
         //TODO PASTE PASSWORD HER
-        public static string pw = "Secret123";
+        public static string pw = "";
 
         //Nikolajs
         public string connectionString = $"Data Source=nikolajdbserver.database.windows.net;Initial Catalog=NikolajDB;User ID=nikolajlogin;Password={pw};Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
@@ -125,6 +125,7 @@ namespace HotelRestService.DBUtil
                 connection.Open();
                 command.ExecuteNonQuery();
             }
-            return true;        }
+            return true;
+        }
     }
 }
