@@ -9,8 +9,10 @@ namespace HotelRestService.DBUtil
 {
     public class ManageFacilities
     {
-        //TODO Indsæt connection string fra opgaven her
-        public string connectionString = "";
+        //TODO PASTE PASSWORD HER
+        public static string pw = "";
+
+        public string connectionString = $"Data Source=johan4391server.database.windows.net;Initial Catalog=JohanDB;User ID=joha4391;Password={pw};Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         public List<Facilities> GetAllFacilities()
         {
@@ -79,7 +81,8 @@ namespace HotelRestService.DBUtil
 
         public bool CreateFacilities(Facilities facilities)
         {
-            string querystring = $"INSERT INTO DemoFacilities VALUES {facilities.HotelNr}, {facilities.Swimmingpool}, {facilities.Tabletennis}, {facilities.Pooltable}, {facilities.Bar}";
+            string querystring = $"INSERT INTO DemoFacilities (Hotel_No, Swimmingpool, Tabletennis, Pooltable, Bar) " +
+                                 $"VALUES ({facilities.HotelNr}, {Convert.ToInt16(facilities.Swimmingpool)}, {Convert.ToInt16(facilities.Tabletennis)}, {Convert.ToInt16(facilities.Pooltable)}, {Convert.ToInt16(facilities.Bar)})";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -102,7 +105,8 @@ namespace HotelRestService.DBUtil
                 connection.Open();
                 command.ExecuteNonQuery();
             }
-            return true;        }
+            return true;
+        }
 
         public bool DeleteFacilities(int hotelNr)
         {

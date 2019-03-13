@@ -16,7 +16,12 @@ namespace CorrectLibrary
 
         public Facilities()
         {
-            
+
+        }
+
+        public override string ToString()
+        {
+            return $"Hotel_No: {HotelNr},\t Swimmingpool: {Swimmingpool},\t Tabletennis: {Tabletennis},\t Pooltable: {Pooltable},\t Bar: {Bar}";
         }
     }
 }
