@@ -10,13 +10,13 @@ namespace HotelRestService.DBUtil
     public class ManageFacilities
     {
         //TODO PASTE PASSWORD HER
-        public static string pw = "";
+        public static string Pw = " ";
 
         //Nikolajs
-        public string connectionString = $"Data Source=nikolajdbserver.database.windows.net;Initial Catalog=NikolajDB;User ID=nikolajlogin;Password={pw};Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        public string ConnectionString = $"Data Source=nikolajdbserver.database.windows.net;Initial Catalog=NikolajDB;User ID=nikolajlogin;Password={Pw};Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         //Johans
-        //public string connectionString = $"Data Source=johan4391server.database.windows.net;Initial Catalog=JohanDB;User ID=joha4391;Password={pw};Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        //public string ConnectionString = $"Data Source=johan4391server.database.windows.net;Initial Catalog=JohanDB;User ID=joha4391;Password={Pw};Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         public List<Facilities> GetAllFacilities()
         {
@@ -24,7 +24,7 @@ namespace HotelRestService.DBUtil
 
             List<Facilities> facilitiesList = new List<Facilities>();
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand(
                     querystring, connection);
@@ -58,7 +58,7 @@ namespace HotelRestService.DBUtil
             string querystring = $"SELECT * from DemoFacilities WHERE Hotel_No = {hotelNr}";
             Facilities f = new Facilities();
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand(
                     querystring, connection);
@@ -88,7 +88,7 @@ namespace HotelRestService.DBUtil
             string querystring = $"INSERT INTO DemoFacilities (Hotel_No, Swimmingpool, Tabletennis, Pooltable, Bar) " +
                                  $"VALUES ({facilities.HotelNr}, {Convert.ToInt16(facilities.Swimmingpool)}, {Convert.ToInt16(facilities.Tabletennis)}, {Convert.ToInt16(facilities.Pooltable)}, {Convert.ToInt16(facilities.Bar)})";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand cmd = new SqlCommand(querystring, connection);
                 connection.Open();
@@ -104,7 +104,7 @@ namespace HotelRestService.DBUtil
                 $"SET Swimmingpool = {Convert.ToInt16(facilities.Swimmingpool)}, Tabletennis = {Convert.ToInt16(facilities.Tabletennis)}, Pooltable = {Convert.ToInt16(facilities.Pooltable)}, Bar = {Convert.ToInt16(facilities.Bar)} " +
                 $"WHERE Hotel_No = {hotelNr}";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand(
                     querystring, connection);
@@ -118,7 +118,7 @@ namespace HotelRestService.DBUtil
         {
             string querystring = $"DELETE FROM DemoFacilities WHERE Hotel_No = {hotelNr}";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand(
                     querystring, connection);
