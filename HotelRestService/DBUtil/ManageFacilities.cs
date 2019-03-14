@@ -121,6 +121,7 @@ namespace HotelRestService.DBUtil
                 connection.Open();
                 command.ExecuteNonQuery();
             }
-            return true;        }
+            return true;
+        }
     }
 }
