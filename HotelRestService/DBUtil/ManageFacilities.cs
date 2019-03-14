@@ -12,11 +12,7 @@ namespace HotelRestService.DBUtil
         //TODO PASTE PASSWORD HER
         public static string Pw = " ";
 
-        //Nikolajs
-        public string ConnectionString = $"Data Source=nikolajdbserver.database.windows.net;Initial Catalog=NikolajDB;User ID=nikolajlogin;Password={Pw};Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-
-        //Johans
-        //public string ConnectionString = $"Data Source=johan4391server.database.windows.net;Initial Catalog=JohanDB;User ID=joha4391;Password={Pw};Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        public string ConnectionString = $"Data Source=johan4391server.database.windows.net;Initial Catalog=JohanDB;User ID=joha4391;Password={Pw};Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         public List<Facilities> GetAllFacilities()
         {
